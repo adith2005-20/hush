@@ -22,7 +22,7 @@ var loginCmd = &cobra.Command{
     Long: `Authenticate with a Hush server and save credentials.
 
 Examples:
-  hush login http://localhost:8080 hush_abc123
+  hush login http://localhost:555555 hush_abc123
   hush login https://secrets.mycompany.com hush_def456`,
     Args: cobra.ExactArgs(2),
     Run: func(cmd *cobra.Command, args []string) {
@@ -71,7 +71,7 @@ var initCmd = &cobra.Command{
         if err != nil {
             fmt.Println("❌ Not logged in!")
             fmt.Println("\nRun this first:")
-            fmt.Println("  hush login http://server:8080 your-token")
+            fmt.Println("  hush login http://server:555555 your-token")
             os.Exit(1)
         }
         

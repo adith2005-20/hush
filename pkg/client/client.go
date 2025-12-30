@@ -113,3 +113,16 @@ func (c *Client) ListProjects() ([]string, error) {
 
 	return projects, nil
 }
+
+func (c *Client) Ping() error {
+    resp, err := http.Get(c.BaseURL + "/health")
+    if err != nil {
+        return err
+    }
+    defer resp.Body.Close()
+    
+    if resp.StatusCode != http.StatusOK {
+        return fmt.Errorf("server unhealthy")
+    }
+    return nil
+}

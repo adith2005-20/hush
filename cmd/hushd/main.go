@@ -36,7 +36,7 @@ var initCmd = &cobra.Command{
             os.Exit(1)
         }
         
-        fmt.Println("🤫 Initializing Hush server...")
+        fmt.Println("Initializing Hush server...")
         fmt.Println()
         
         store, err := storage.New(dbPath)
@@ -65,7 +65,7 @@ var initCmd = &cobra.Command{
         fmt.Println("       hushd start")
         fmt.Println()
         fmt.Println("  2. On your dev machine, login:")
-        fmt.Printf("       hush login http://your-server:8080 %s\n", token)
+        fmt.Printf("       hush login http://your-server:55555 %s\n", token)
     },
 }
 
@@ -177,7 +177,7 @@ func getPort() string {
     if port := os.Getenv("PORT"); port != "" {
         return port
     }
-    return "8080"
+    return "555555"
 }
 
 func main() {

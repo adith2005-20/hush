@@ -177,7 +177,7 @@ func getPort() string {
     if port := os.Getenv("PORT"); port != "" {
         return port
     }
-    return "555555"
+    return "55555"
 }
 
 func main() {
